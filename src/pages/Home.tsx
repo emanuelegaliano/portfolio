@@ -213,7 +213,7 @@ export default function Home() {
                 <div className="timelineCard">
                   <div className="timelineTop">
                     <h3 className="timelineTitle">
-                      Research Experience in Machine Learning and Network Inference
+                      Internship with Prof. Antonino Furnari
                     </h3>
                     <p className="timelineTime">2023</p>
                   </div>
