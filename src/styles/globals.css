@@ -723,3 +723,82 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 8px 18px rgba(37, 99, 235, 0.18);
 }
+
+/* ===========================
+   HOVER TIERS (drop-in)
+   Incolla in fondo al CSS
+=========================== */
+
+/* base: transizioni coerenti */
+.heroUnified,
+.metaItem,
+.timelineCard,
+.projectCard,
+.detailPanel,
+.socialIcon,
+.button,
+.navLinkLarge {
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
+  will-change: transform;
+}
+
+/* -------- LOW hover (hero, timeline, panels) -------- */
+.heroUnified:hover,
+.timelineCard:hover,
+.detailPanel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 70px rgba(2, 6, 23, 0.14);
+}
+
+/* -------- MED hover (meta cards + nav + socials) -------- */
+.metaItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 60px rgba(2, 6, 23, 0.12);
+  border-color: rgba(255, 255, 255, 0.62); /* resta “glass” */
+}
+
+.navLinkLarge:hover {
+  transform: translateY(-1px);
+}
+
+.socialIcon:hover {
+  /* mantieni il tuo stile attuale ma rendilo coerente con i tiers */
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(37, 99, 235, 0.22);
+}
+
+/* -------- HIGH hover (project cards) -------- */
+.projectCard {
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background 220ms ease;
+}
+
+.projectCard:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 28px 90px rgba(2, 6, 23, 0.20);
+  border-color: rgba(37, 99, 235, 0.30);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .heroUnified,
+  .metaItem,
+  .timelineCard,
+  .projectCard,
+  .detailPanel,
+  .socialIcon,
+  .button,
+  .navLinkLarge {
+    transition: none !important;
+  }
+
+  .heroUnified:hover,
+  .metaItem:hover,
+  .timelineCard:hover,
+  .projectCard:hover,
+  .detailPanel:hover,
+  .socialIcon:hover,
+  .navLinkLarge:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
