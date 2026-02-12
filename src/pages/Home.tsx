@@ -5,88 +5,97 @@ import { SiGithub, SiLinkedin, SiInstagram, SiMedium, SiKaggle } from "react-ico
 export default function Home() {
   return (
     <>
-      <section id="about" className="section">
-        <div className="container">
-          <div className="heroSplit">
-            <div className="heroCard">
-              <p className="eyebrow">Portfolio</p>
+     <section id="about" className="section">
+  <div className="container">
+    <div className="heroUnified">
+      <div className="heroUnifiedGrid">
+        <div className="heroUnifiedContent">
+          <p className="eyebrow">Portfolio</p>
 
-              <h1 className="h1">
-                Emanuele Galiano
-                <span className="heroSubhead">
-                  Bachelor student @{" "}
-                  <a
-                    className="inlineLink"
-                    href="https://www.unict.it/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    UNICT
-                  </a>{" "}
-                  •{" "}
-                  <a
-                    className="inlineLink"
-                    href="https://web.dmi.unict.it/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    DMI
-                  </a>{" "}
+          <h1 className="h1 heroTitle">
+            Emanuele Galiano
+            <span className="heroSubhead">
+              Bachelor student @{" "}
+              <a className="inlineLink" href="https://www.unict.it/" target="_blank" rel="noreferrer">
+                UNICT
+              </a>{" "}
+              •{" "}
+              <a className="inlineLink" href="https://web.dmi.unict.it/" target="_blank" rel="noreferrer">
+                DMI
+              </a>
+            </span>
+          </h1>
+
+          <p className="heroHeadline">Medical Data Science &amp; Machine Learning for Healthcare</p>
+
+          <p className="lead heroLead">
+            I turn messy, real-world healthcare data into reliable insights through transparent,
+            reproducible pipelines.
+          </p>
+
+          <div className="heroActions" role="group" aria-label="Primary actions">
+            <a className="button buttonPrimary" href="#">
+              Download CV
+            </a>
+            <a className="button buttonGhost" href="mailto:galianoo.emanuele@gmail.com">
+              Email
+            </a>
+            <a
+              className="button buttonGhost"
+              href="https://github.com/emanuelegaliano"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
+          </div>
+
+          <dl className="heroMeta" aria-label="Quick info">
+            <div className="metaItem">
+              <dt>Focus</dt>
+              <dd>
+                <span className="metaPills">
+                  <span className="metaPill">Healthcare Data</span>
+                  <span className="metaPill">ML&DL Fundamentals</span>
                 </span>
-              </h1>
-
-              <p className="lead">
-                I’m a Bachelor’s student in Computer Science with interests in Medical Data
-                Science and Medical AI / Medical Machine Learning. I enjoy turning messy, real-world
-                healthcare data into reliable insights, and I try to build workflows that are transparent
-                and reproducible.
-              </p>
-
-              <div className="heroActions" role="group" aria-label="Primary actions">
-                <a className="button buttonPrimary" href="#">
-                  Download CV
-                </a>
-                <a className="button buttonSecondary" href="mailto:galianoo.emanuele@gmail.com">
-                  Email
-                </a>
-                <a
-                  className="button buttonSecondary"
-                  href="https://github.com/emanuelegaliano"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  GitHub
-                </a>
-              </div>
-
-              <dl className="heroMeta" aria-label="Quick info">
-                <div className="metaItem">
-                  <dt>Focus</dt>
-                  <dd>Healthcare data, ML fundamentals, and applied research</dd>
-                </div>
-                <div className="metaItem">
-                  <dt>Currently</dt>
-                  <dd>Bachelor student</dd>
-                </div>
-                <div className="metaItem">
-                  <dt>Interests</dt>
-                  <dd>Medical Data Science and Medical AI</dd>
-                </div>
-              </dl>
+              </dd>
             </div>
 
-            <aside className="portraitCard" aria-label="Portrait">
-              <img
-                className="portraitImage"
-                src={profileImg}
-                alt=""
-                loading="eager"
-                decoding="async"
-              />
-            </aside>
-          </div>
+            <div className="metaItem">
+              <dt>Currently</dt>
+              <dd>
+                <span className="metaPills">
+                  <span className="metaPill">Bachelor student</span>
+                </span>
+              </dd>
+            </div>
+
+            <div className="metaItem">
+              <dt>Interests</dt>
+              <dd>
+                <span className="metaPills">
+                  <span className="metaPill">Medical AI</span>
+                  <span className="metaPill">Medical Data Science</span>
+                </span>
+              </dd>
+            </div>
+          </dl>
         </div>
-      </section>
+
+        <aside className="heroUnifiedPortrait" aria-label="Portrait">
+          <img
+            className="portraitImage"
+            src={profileImg}
+            alt="Portrait of Emanuele Galiano"
+            loading="eager"
+            decoding="async"
+          />
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+ 
 
       <section id="education" className="section">
         <div className="container">
