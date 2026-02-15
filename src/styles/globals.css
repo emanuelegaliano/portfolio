@@ -35,11 +35,12 @@ body {
   color: var(--text);
 }
 
-
 * {
   box-sizing: border-box;
 }
 
+/* NOTE: you currently have two body blocks; keeping your "before" as-is.
+   If you want the gradient background, REMOVE this second body block below. */
 body {
   margin: 0;
   font-family: var(--font);
@@ -179,7 +180,7 @@ body {
   background: white;
   font-weight: 600;
   text-decoration: none;
-  transition: transform 160ms ease-out, border-color 160ms ease-out, background 160ms ease-out;
+  transition: transform 160ms ease-out, border-color 160ms ease-out, background 160ms ease-out, color 160ms ease-out;
 }
 
 .button:hover {
@@ -216,7 +217,8 @@ body {
 .button:focus-visible,
 .inlineLink:focus-visible,
 .navLinkLarge:focus-visible,
-.socialIcon:focus-visible {
+.socialIcon:focus-visible,
+.detailsLink:focus-visible {
   outline: 3px solid rgba(37, 99, 235, 0.25);
   outline-offset: 3px;
 }
@@ -368,8 +370,7 @@ body {
 
   border: 1px solid rgba(255, 255, 255, 0.6);
 
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6),
     0 20px 50px rgba(2, 6, 23, 0.22);
 }
 
@@ -724,81 +725,104 @@ body {
   box-shadow: 0 8px 18px rgba(37, 99, 235, 0.18);
 }
 
-/* ===========================
-   HOVER TIERS (drop-in)
-   Incolla in fondo al CSS
-=========================== */
+/* =========================================================
+   HOVER — revised per your rules
+   1) NO hover on the hero card container
+   2) Reduce "jump" everywhere
+   3) "Details" text should only darken (no jump)
+========================================================= */
 
-/* base: transizioni coerenti */
-.heroUnified,
+/* Base: consistent transitions (reduced movement) */
 .metaItem,
 .timelineCard,
 .projectCard,
 .detailPanel,
 .socialIcon,
 .button,
-.navLinkLarge {
-  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
+.navLinkLarge,
+.projectCard a {
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease,
+    background 160ms ease, color 160ms ease, opacity 160ms ease, filter 160ms ease;
   will-change: transform;
 }
 
-/* -------- LOW hover (hero, timeline, panels) -------- */
-.heroUnified:hover,
+/* 1) Ensure hero container never reacts */
+.heroUnified {
+  transition: none !important;
+}
+.heroUnified:hover {
+  transform: none !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+/* LOW (quiet): timeline + panels — very small lift */
 .timelineCard:hover,
 .detailPanel:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 22px 70px rgba(2, 6, 23, 0.14);
+  transform: translateY(-1px);
+  box-shadow: 0 18px 55px rgba(2, 6, 23, 0.12);
 }
 
-/* -------- MED hover (meta cards + nav + socials) -------- */
+/* MED: meta cards — tiny lift */
 .metaItem:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 20px 60px rgba(2, 6, 23, 0.12);
-  border-color: rgba(255, 255, 255, 0.62); /* resta “glass” */
+  transform: translateY(-1px);
+  box-shadow: 0 16px 45px rgba(2, 6, 23, 0.10);
+  border-color: rgba(255, 255, 255, 0.62);
 }
 
+/* MED: nav — keep your bg hover, no lift */
 .navLinkLarge:hover {
+  transform: none;
+}
+
+/* MED: socials — slightly reduced from -3px to -2px */
+.socialIcon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.18);
+}
+
+/* Buttons — reduced from -1px to -1px (same), but keep consistent shadows light */
+.button:hover {
   transform: translateY(-1px);
 }
 
-.socialIcon:hover {
-  /* mantieni il tuo stile attuale ma rendilo coerente con i tiers */
-  transform: translateY(-4px);
-  box-shadow: 0 12px 26px rgba(37, 99, 235, 0.22);
-}
-
-/* -------- HIGH hover (project cards) -------- */
+/* HIGH (projects): reduced jump from -2px to -2px and add depth via shadow */
 .projectCard {
-  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background 220ms ease;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+.projectCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 70px rgba(2, 6, 23, 0.14);
+  border-color: rgba(37, 99, 235, 0.28);
 }
 
-.projectCard:hover {
-  transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 28px 90px rgba(2, 6, 23, 0.20);
-  border-color: rgba(37, 99, 235, 0.30);
+/* 3) "Details" text: no jump, only darken.
+   This targets:
+   - any anchor/button inside .projectCard
+   - specifically .buttonPrimary if you use it for Details
+*/
+.projectCard a:hover,
+.projectCard a:focus-visible {
+  transform: none !important;
+  filter: brightness(0.94);
+}
+
+/* If Details is a .buttonPrimary, override its lift on hover */
+.projectCard .buttonPrimary:hover {
+  transform: none !important;
+  filter: brightness(0.94);
+  box-shadow: none;
 }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .heroUnified,
   .metaItem,
   .timelineCard,
   .projectCard,
   .detailPanel,
   .socialIcon,
   .button,
-  .navLinkLarge {
+  .navLinkLarge,
+  .projectCard a {
     transition: none !important;
-  }
-
-  .heroUnified:hover,
-  .metaItem:hover,
-  .timelineCard:hover,
-  .projectCard:hover,
-  .detailPanel:hover,
-  .socialIcon:hover,
-  .navLinkLarge:hover {
-    transform: none !important;
-    box-shadow: none !important;
   }
 }
