@@ -2,6 +2,7 @@ import { Routes, Route, Link, useLocation, useNavigate } from "react-router-dom"
 import { useEffect } from "react";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
+import ProjectDetail from "./pages/ProjectDetail";
 
 const HEADER_OFFSET = 84;
 
@@ -44,9 +45,9 @@ function App() {
 
   return (
     <>
-      <header className="siteHeader siteHeaderSticky siteHeaderAccent">
+      <header className="siteHeader siteHeaderSticky">
         <div className="container headerInner headerInnerLarge">
-          <Link to="/" className="brand brandOnAccent">
+          <Link to="/" className="brand">
             Emanuele Galiano
           </Link>
 
@@ -54,16 +55,15 @@ function App() {
             <button
               type="button"
               onClick={() => goToSection("about")}
-              className="navLink navLinkLarge navLinkOnAccent"
+              className="navLink navLinkLarge"
             >
               About
             </button>
 
-            {/* FIX: Education before Projects */}
             <button
               type="button"
               onClick={() => goToSection("education")}
-              className="navLink navLinkLarge navLinkOnAccent"
+              className="navLink navLinkLarge"
             >
               Education
             </button>
@@ -71,16 +71,15 @@ function App() {
             <button
               type="button"
               onClick={() => goToSection("projects")}
-              className="navLink navLinkLarge navLinkOnAccent"
+              className="navLink navLinkLarge"
             >
               Projects
             </button>
 
-            {/* FIX: must match Home.tsx id="contacts" */}
             <button
               type="button"
               onClick={() => goToSection("contacts")}
-              className="navLink navLinkLarge navLinkOnAccent"
+              className="navLink navLinkLarge"
             >
               Contacts
             </button>
@@ -93,6 +92,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/:slug" element={<ProjectDetail />} />
       </Routes>
     </>
   );

@@ -1,8 +1,14 @@
-import profileImg from "../assets/me.jpg"
+import { Link } from "react-router-dom";
+import { ChevronUp } from "lucide-react";
+import profileImg from "../assets/me.jpg";
 import { projects } from "../data/projects";
+import { timelineEntries } from "../data/timeline";
 import { SiGithub, SiLinkedin, SiInstagram, SiMedium, SiKaggle } from "react-icons/si";
 
 export default function Home() {
+  const futureEntries = timelineEntries.filter((e) => e.type === "future");
+  const pastEntries = timelineEntries.filter((e) => e.type === "past");
+
   return (
     <>
      <section id="about" className="section">
@@ -105,186 +111,66 @@ export default function Home() {
           </div>
 
           <ol className="timeline" aria-label="Education and experience timeline">
-            {/* FUTURE (dashed line + dashed nodes) */}
-            <div className="timelineGroup timelineFuture">
-              <li className="timelineItem">
-                <span className="timelineNode timelineNodeFuture" aria-hidden="true" />
-                <div className="timelineCard">
-                  <div className="timelineTop">
-                    <h3 className="timelineTitle">PhD in Computer Science (Plan)</h3>
-                    <p className="timelineTime">Future</p>
-                  </div>
-                  <p className="timelineOrg">
-                    <a
-                      className="inlineLink"
-                      href="https://web.dmi.unict.it/dottorati/informatica/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      PhD Program (DMI • UNICT)
-                    </a>{" "}
-                    • Catania
-                  </p>
-                  <p className="timelineDesc mutedText">Placeholder for future milestones.</p>
-                </div>
-              </li>
-
-              <li className="timelineItem">
-                <span className="timelineNode timelineNodeFuture" aria-hidden="true" />
-                <div className="timelineCard">
-                  <div className="timelineTop">
-                    <h3 className="timelineTitle">Master Degree in Computer Science (Plan)</h3>
-                    <p className="timelineTime">Future</p>
-                  </div>
-                  <p className="timelineOrg">
-                    <a
-                      className="inlineLink"
-                      href="https://www.unict.it/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      UNICT
-                    </a>{" "}
-                    •{" "}
-                    <a
-                      className="inlineLink"
-                      href="https://web.dmi.unict.it/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      DMI
-                    </a>{" "}
-                    •{" "}
-                    <a
-                      className="inlineLink"
-                      href="https://web.dmi.unict.it/it/corsi/lm-18/health-informatics"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Health Informatics
-                    </a>{" "}
-                    • Catania
-                  </p>
-                  <p className="timelineDesc mutedText">Placeholder for future milestones.</p>
-                </div>
-              </li>
+            <div className="timelineArrow" aria-hidden="true">
+              <ChevronUp size={16} strokeWidth={2} />
             </div>
 
-            {/* PAST & CURRENT (solid line + solid nodes) */}
+            <div className="timelineGroup timelineFuture">
+              {futureEntries.map((entry) => (
+                <li key={entry.id} className="timelineItem">
+                  <span className="timelineNode timelineNodeFuture" aria-hidden="true" />
+                  <div className="timelineCard">
+                    <div className="timelineTop">
+                      <h3 className="timelineTitle">{entry.title}</h3>
+                      <p className="timelineTime">{entry.time}</p>
+                    </div>
+                    <p className="timelineOrg">
+                      {entry.org.map((item, i) => (
+                        <span key={i}>
+                          {i > 0 && " • "}
+                          {item.url ? (
+                            <a className="inlineLink" href={item.url} target="_blank" rel="noreferrer">
+                              {item.label}
+                            </a>
+                          ) : (
+                            item.label
+                          )}
+                        </span>
+                      ))}
+                    </p>
+                    <p className="timelineDesc mutedText">{entry.description}</p>
+                  </div>
+                </li>
+              ))}
+            </div>
+
             <div className="timelineGroup timelinePast">
-              {/* Bachelor */}
-              <li className="timelineItem">
-                <span className="timelineNode" aria-hidden="true" />
-                <div className="timelineCard">
-                  <div className="timelineTop">
-                    <h3 className="timelineTitle">Bachelor Degree in Computer Science</h3>
-                    <p className="timelineTime">2023 — Present</p>
+              {pastEntries.map((entry) => (
+                <li key={entry.id} className="timelineItem">
+                  <span className="timelineNode" aria-hidden="true" />
+                  <div className="timelineCard">
+                    <div className="timelineTop">
+                      <h3 className="timelineTitle">{entry.title}</h3>
+                      <p className="timelineTime">{entry.time}</p>
+                    </div>
+                    <p className="timelineOrg">
+                      {entry.org.map((item, i) => (
+                        <span key={i}>
+                          {i > 0 && " • "}
+                          {item.url ? (
+                            <a className="inlineLink" href={item.url} target="_blank" rel="noreferrer">
+                              {item.label}
+                            </a>
+                          ) : (
+                            item.label
+                          )}
+                        </span>
+                      ))}
+                    </p>
+                    <p className="timelineDesc mutedText">{entry.description}</p>
                   </div>
-                  <p className="timelineOrg">
-                    <a
-                      className="inlineLink"
-                      href="https://www.unict.it/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      UNICT
-                    </a>{" "}
-                    •{" "}
-                    <a
-                      className="inlineLink"
-                      href="https://web.dmi.unict.it/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      DMI
-                    </a>{" "}
-                    •{" "}
-                    <a
-                      className="inlineLink"
-                      href="https://web.dmi.unict.it/it/corsi/l-31/piani-di-studio"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Curricula in Data Science
-                    </a>{" "}
-                    • Catania
-                  </p>
-                  <p className="timelineDesc mutedText">
-                    Undergraduate student focusing on Data Science, Machine Learning, and applied statistical
-                    modeling, with a growing interest in medical data analysis and AI-driven research.
-                  </p>
-                </div>
-              </li>
-
-              {/* Research Experience */}
-              <li className="timelineItem">
-                <span className="timelineNode" aria-hidden="true" />
-                <div className="timelineCard">
-                  <div className="timelineTop">
-                    <h3 className="timelineTitle">
-                      Internship with Prof. Antonino Furnari
-                    </h3>
-                    <p className="timelineTime">2023</p>
-                  </div>
-                  <p className="timelineOrg">
-                    <a
-                      className="inlineLink"
-                      href="https://www.unict.it/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      UNICT
-                    </a>{" "}
-                    •{" "}
-                    <a
-                      className="inlineLink"
-                      href="https://web.dmi.unict.it/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      DMI
-                    </a>{" "}
-                    •{" "}
-                    <a
-                      className="inlineLink"
-                      href="https://antoninofurnari.github.io/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Prof. Antonino Furnari
-                    </a>
-                  </p>
-                  <p className="timelineDesc mutedText">
-                    Research experience in Machine Learning and Network Inference for the analysis of
-                    neurodegenerative diseases.
-                  </p>
-                </div>
-              </li>
-
-              {/* High School */}
-              <li className="timelineItem">
-                <span className="timelineNode" aria-hidden="true" />
-                <div className="timelineCard">
-                  <div className="timelineTop">
-                    <h3 className="timelineTitle">High School Diploma</h3>
-                    <p className="timelineTime">2018 — 2023</p>
-                  </div>
-                  <p className="timelineOrg">
-                    <a
-                      className="inlineLink"
-                      href="https://www.majoranascordia.edu.it/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Liceo Scientifico “Ettore Majorana”
-                    </a>{" "}
-                    • Scordia
-                  </p>
-                  <p className="timelineDesc mutedText">
-                    Scientific high school diploma with a strong foundation in mathematics and physics.
-                  </p>
-                </div>
-              </li>
+                </li>
+              ))}
             </div>
           </ol>
         </div>
@@ -300,9 +186,9 @@ export default function Home() {
               <p className="mutedText">A quick snapshot — see the full list for everything.</p>
             </div>
 
-            <a className="button buttonSecondary" href="/projects">
+            <Link className="button buttonSecondary" to="/projects">
               View all projects
-            </a>
+            </Link>
           </div>
 
           <div className="projectsGrid" role="list">
@@ -316,14 +202,9 @@ export default function Home() {
                 <p className="mutedText projectSummary">{p.summary}</p>
 
                 <div className="projectActions">
-                  <a
-                    className="button buttonPrimary"
-                    href={p.repoUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
+                  <Link className="button buttonPrimary" to={`/projects/${p.slug}`}>
                     Details
-                  </a>
+                  </Link>
                 </div>
               </article>
             ))}

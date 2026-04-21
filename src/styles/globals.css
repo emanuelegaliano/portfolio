@@ -39,14 +39,6 @@ body {
   box-sizing: border-box;
 }
 
-/* NOTE: you currently have two body blocks; keeping your "before" as-is.
-   If you want the gradient background, REMOVE this second body block below. */
-body {
-  margin: 0;
-  font-family: var(--font);
-  background: var(--bg);
-  color: var(--text);
-}
 
 .container {
   width: min(100% - 2rem, 1100px);
@@ -161,10 +153,25 @@ body {
 
 /* ===== LINKS ===== */
 
-.navLink:visited,
-.inlineLink:visited,
+.inlineLink:visited {
+  color: inherit;
+}
+
+.buttonSecondary,
+.buttonGhost {
+  color: var(--text);
+}
+
+.buttonPrimary:visited {
+  color: white;
+}
+
+.buttonSecondary:visited,
+.buttonGhost:visited,
 .contactEmailMain:visited,
-.contactLink:visited {
+.breadcrumbLink:visited,
+.socialIcon:visited,
+.brand:visited {
   color: inherit;
 }
 
@@ -436,16 +443,12 @@ body {
   z-index: 0;
 }
 
-.timelineFuture::after {
-  content: "";
+.timelineArrow {
   position: absolute;
-  left: var(--axis-x);
-  top: -26px;
-  width: 10px;
-  height: 10px;
-  border-right: 2px solid rgba(37, 99, 235, 0.65);
-  border-top: 2px solid rgba(37, 99, 235, 0.65);
-  transform: translateX(-50%) rotate(-45deg);
+  left: calc(var(--axis-x) - 8px);
+  top: 10px;
+  color: rgba(37, 99, 235, 0.65);
+  line-height: 0;
   z-index: 1;
 }
 

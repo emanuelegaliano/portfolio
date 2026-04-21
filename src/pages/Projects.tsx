@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { projects } from "../data/projects";
 
 export default function Projects() {
@@ -24,14 +25,9 @@ export default function Projects() {
               </p>
 
               <div className="projectActions">
-                <a
-                  className="button buttonPrimary"
-                  href={p.repoUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <Link className="button buttonPrimary" to={`/projects/${p.slug}`}>
                   Details
-                </a>
+                </Link>
               </div>
             </article>
           ))}
