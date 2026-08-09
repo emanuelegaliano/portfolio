@@ -230,8 +230,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   object-fit: contain;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-  border-radius: 8px;
 }
 
 .floating-badge {
@@ -321,10 +319,9 @@
 }
 
 .experience-block {
-  background-color: rgba(198, 40, 40, 0.04);
-  border-left: 4px solid #C62828;
-  padding: 2.5rem 3rem;
-  border-radius: 0 8px 8px 0;
+  background-color: transparent;
+  border-left: none;
+  padding: 2.5rem 0;
   color: var(--text-dark);
   margin-top: 2rem;
 }
@@ -377,7 +374,7 @@
   font-size: 8rem;
   line-height: 0.8;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(255,255,255,0.15);
+  -webkit-text-stroke: 2px rgba(255,255,255,0.25);
   margin-top: 15rem; /* Space for contact box */
   text-transform: uppercase;
   margin-bottom: 3rem;
@@ -406,7 +403,7 @@
 .interest-item-title {
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--accent-primary-light);
+  color: var(--accent-tertiary);
   margin-bottom: 0.5rem;
 }
 .interest-item-desc {
@@ -439,7 +436,7 @@
 .work-carousel-section {
   --accent-secondary: #005377; /* Yale Blue */
   position: relative;
-  background: radial-gradient(circle at center, var(--bg-main) 0%, var(--bg-alt) 100%);
+  background-color: var(--bg-main);
   padding: 6rem 0 10rem;
   overflow: hidden;
 }
