@@ -4,18 +4,19 @@
   /* Extended Palette */
   --bg-main: #F4F4F5;
   --bg-alt: #EAECEF; /* slightly darker for alternating sections */
-  --bg-contrast: #1E293B; /* Dark slate */
-  --bg-contrast-light: #334155; /* Lighter slate for overlapping cards */
-  --bg-contrast-dark: #0F172A;
+  --bg-contrast: #052F5F; /* Oxford Navy */
+  --bg-contrast-light: #005377; /* Yale Blue */
+  --bg-contrast-dark: #031c3a; /* Darker Navy */
   
-  --accent-primary: #3B82F6; /* Tech Blue */
-  --accent-primary-light: #60A5FA;
-  --accent-secondary: #F59E0B; /* Amber/Warm Orange */
-  --accent-secondary-light: #FCD34D;
-  --accent-tertiary: #10B981; /* Teal/Emerald for extra pop */
+  /* Default accents */
+  --accent-primary: #06A77D; /* Seaweed */
+  --accent-primary-light: #08d09d;
+  --accent-secondary: #F1A208; /* Golden Orange */
+  --accent-secondary-light: #f6c054;
+  --accent-tertiary: #D5C67A; /* Golden Sand */
   
-  --text-dark: #0F172A;
-  --text-muted: #475569;
+  --text-dark: #031c3a;
+  --text-muted: #052F5F;
   --text-light: #F8FAFC;
   --text-light-muted: #94A3B8;
   

@@ -1,4 +1,5 @@
 import React from 'react'
+import secondCardImg from '../assets/second_card.png'
 
 const About = () => {
   return (
@@ -27,7 +28,7 @@ const About = () => {
 
         <div className="about-visual">
           <div className="visual-circle"></div>
-          <div className="visual-rect"></div>
+          <img src={secondCardImg} alt="Card visual" className="visual-rect" />
           
           <div className="floating-badge badge-1">Upcoming MSc</div>
           <div className="floating-badge badge-2">Italian</div>
