@@ -1,5 +1,4 @@
 import React from 'react'
-import { Mail } from 'lucide-react'
 
 const GithubIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -20,24 +19,16 @@ const Header = () => {
   return (
     <header className="header">
       <div className="container header-container">
-        <div className="logo">Emanuele Galiano</div>
+        <div className="logo">
+          <span className="logo-star">✦</span> Emanuele Galiano
+        </div>
         
         <nav className="nav-links">
+          <a href="#about" className="nav-link">About</a>
+          <a href="#resume" className="nav-link">Resume</a>
           <a href="#work" className="nav-link">Work</a>
           
-          <div className="social-links">
-            <a href="#" className="social-icon" aria-label="GitHub">
-              <GithubIcon />
-            </a>
-            <a href="#" className="social-icon" aria-label="LinkedIn">
-              <LinkedinIcon />
-            </a>
-            <a href="#" className="social-icon" aria-label="Email">
-              <Mail size={20} />
-            </a>
-          </div>
-
-          <a href="#contact" className="btn">Get in touch</a>
+          <a href="#contact" className="btn btn-secondary" style={{ padding: '0.5rem 1.5rem', fontSize: '0.9rem' }}>Get in touch!</a>
         </nav>
       </div>
     </header>

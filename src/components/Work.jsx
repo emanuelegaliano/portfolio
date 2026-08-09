@@ -33,17 +33,17 @@ const Work = () => {
   ]
 
   return (
-    <section className="section" id="work">
+    <section className="work-section" id="work">
       <div className="container">
-        <h2 className="section-title">Work</h2>
+        <h2 className="section-heading-editorial">Selected Work</h2>
         
         <div className="bento-grid">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <div key={project.id} className="bento-item">
               
               <div className="project-header">
                 <h3 className="project-title">{project.title}</h3>
-                <a href={project.link} className="project-icon" aria-label="View on GitHub">
+                <a href={project.link} style={{ color: 'inherit' }} aria-label="View on GitHub">
                   <GithubIcon />
                 </a>
               </div>

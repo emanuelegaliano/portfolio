@@ -2,8 +2,8 @@ import React from 'react'
 import './App.css'
 import Header from './components/Header'
 import Hero from './components/Hero'
-import EducationExperience from './components/EducationExperience'
-import Interests from './components/Interests'
+import About from './components/About'
+import ResumeSplit from './components/ResumeSplit'
 import Work from './components/Work'
 
 function App() {
@@ -12,8 +12,8 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <EducationExperience />
-        <Interests />
+        <About />
+        <ResumeSplit />
         <Work />
       </main>
       <footer className="footer">
