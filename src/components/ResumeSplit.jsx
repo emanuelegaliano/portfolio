@@ -40,20 +40,21 @@ const ResumeSplit = () => {
 
         <div className="experience-block">
           <h2 className="column-heading">Experience</h2>
-          
-          <div className="timeline-row">
-            <div className="timeline-year">2026 ─ Curr.</div>
-            <div className="timeline-content">
-              <h4>Research Group Member</h4>
-              <p><a href="https://coai-iplab.github.io/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>COAI IP-LAB</a> — Causal Object-centric AI</p>
+          <div className="timeline-list">
+            <div className="timeline-row">
+              <div className="timeline-year">2026 ─ Curr.</div>
+              <div className="timeline-content">
+                <h4>Research Group Member</h4>
+                <p><a href="https://coai-iplab.github.io/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>COAI IP-LAB</a> — Causal Object-centric AI</p>
+              </div>
             </div>
-          </div>
 
-          <div className="timeline-row">
-            <div className="timeline-year">2025 ─ 2026</div>
-            <div className="timeline-content">
-              <h4>Academic Internship</h4>
-              <p>Reconstruction of Latent Orders. Supervised by <a href="https://antoninofurnari.github.io/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Antonino Furnari</a>.</p>
+            <div className="timeline-row">
+              <div className="timeline-year">2025 ─ 2026</div>
+              <div className="timeline-content">
+                <h4>Academic Internship</h4>
+                <p>Reconstruction of Latent Orders. Supervised by <a href="https://antoninofurnari.github.io/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Antonino Furnari</a>.</p>
+              </div>
             </div>
           </div>
         </div>
