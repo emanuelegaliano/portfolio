@@ -843,6 +843,10 @@
     text-align: center;
     margin-bottom: 2rem;
   }
+  .section-heading-editorial {
+    font-size: 14vw !important;
+    margin-bottom: 2rem !important;
+  }
   .carousel-track {
     position: relative;
     height: auto;
