@@ -788,6 +788,11 @@
   .about-title {
     font-size: 2.5rem;
   }
+  .btn-pill-large {
+    max-width: 100%;
+    word-break: break-all;
+    white-space: normal;
+  }
   .split-left, .split-right {
     padding: 2rem 1.5rem;
   }
