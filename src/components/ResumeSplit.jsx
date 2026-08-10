@@ -8,7 +8,7 @@ const ResumeSplit = () => {
       <div className="split-left">
         
         <div>
-          <h2 className="section-heading-editorial">Education</h2>
+          <h2 className="column-heading">Education</h2>
           <div className="timeline-list">
             <div className="timeline-row">
               <div className="timeline-year">2023 ─</div>
@@ -29,7 +29,7 @@ const ResumeSplit = () => {
         </div>
 
         <div className="experience-block">
-          <h2 className="section-heading-editorial">Experience</h2>
+          <h2 className="column-heading">Experience</h2>
           <div className="timeline-row">
             <div className="timeline-year">2023 ─</div>
             <div className="timeline-content">

@@ -5,6 +5,7 @@ import Hero from './components/Hero'
 import About from './components/About'
 import ResumeSplit from './components/ResumeSplit'
 import Work from './components/Work'
+import PersonalityHobbies from './components/PersonalityHobbies'
 
 function App() {
   return (
@@ -12,9 +13,12 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <div className="black-band">
+        </div>
         <About />
         <ResumeSplit />
         <Work />
+        <PersonalityHobbies />
       </main>
       <footer className="footer">
         <div className="container">

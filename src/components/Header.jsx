@@ -20,7 +20,12 @@ const Header = () => {
     <header className="header">
       <div className="container header-container">
         <div className="logo">
-          <span className="logo-star">✦</span> Emanuele Galiano
+          <span className="logo-star" style={{ display: 'flex', alignItems: 'center' }}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="10" y1="19" x2="14" y2="5"></line>
+              <polyline points="15 18 21 12 15 6"></polyline>
+            </svg>
+          </span> Emanuele Galiano
         </div>
         
         <nav className="nav-links">

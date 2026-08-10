@@ -1,4 +1,5 @@
 import React from 'react'
+import firstCardImg from '../assets/first_card.png'
 
 const GithubIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -27,14 +28,14 @@ const Hero = () => {
     <section className="hero-dark">
       
       <div className="hero-huge-text-container">
-        <h1 className="huge-text">PORTFOLIO</h1>
+        <h1 className="huge-text solid">PORTFOLIO</h1>
         <h1 className="huge-text outline">PORTFOLIO</h1>
         <h1 className="huge-text outline">PORTFOLIO</h1>
       </div>
 
       <div className="hero-content-wrapper">
         <div className="hero-visual-layer">
-          <div className="abstract-photo-placeholder"></div>
+          <img src={firstCardImg} alt="Hero representation" className="abstract-photo-placeholder" />
         </div>
         
         <div className="hero-socials">
