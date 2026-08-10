@@ -1,11 +1,20 @@
 /* HEADER */
 .header {
-  position: absolute; /* Not fixed, so it flows like the image */
+  position: fixed;
   top: 0;
   width: 100%;
-  padding: 3rem 0; /* Increased margins */
+  padding: 1.5rem 0;
   z-index: 1000;
-  color: var(--text-light); /* Since the hero is dark */
+  color: var(--text-light);
+  transition: background-color 0.35s ease, padding 0.35s ease, box-shadow 0.35s ease;
+}
+
+.header-scrolled {
+  background-color: rgba(3, 28, 58, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 0.8rem 0;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
 }
 
 .header-container {
@@ -43,6 +52,63 @@
 
 .nav-link:hover {
   color: var(--accent-secondary);
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1002;
+  position: relative;
+}
+
+.hamburger-line {
+  width: 28px;
+  height: 2px;
+  background-color: var(--text-light);
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5.5px, 5.5px);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(5.5px, -5.5px);
+}
+
+/* MOBILE MENU OVERLAY */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 /* HERO (Dark Top Section) */
@@ -453,7 +519,7 @@
 .interest-item-title {
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--accent-tertiary);
+  color: #F1A208;
   margin-bottom: 0.5rem;
 }
 .interest-item-desc {
@@ -484,7 +550,7 @@
 
 /* WORK CAROUSEL SECTION */
 .work-carousel-section {
-  --accent-secondary: #005377; /* Yale Blue */
+  --accent-secondary: #052F5F; /* Oxford Navy — aligned with site palette */
   position: relative;
   background-color: var(--bg-main);
   padding: 6rem 0 6rem;
@@ -549,7 +615,7 @@
 }
 
 .carousel-card.theme-dark {
-  background-color: #005377; /* Yale Blue */
+  background-color: var(--bg-contrast);
   color: var(--text-light);
   border: none;
 }
@@ -724,27 +790,55 @@
     max-width: 100vw;
   }
   
-  /* Fix logo centering */
+  /* Hamburger menu visible on mobile */
+  .hamburger {
+    display: flex;
+  }
+
   .logo {
     margin-left: 0;
-    justify-content: center;
+    font-size: 1.4rem;
   }
+
   .header-container {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    text-align: center;
   }
+
   .nav-links {
-    margin-right: 0;
-    gap: 1rem;
-    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 320px;
+    height: 100vh;
+    height: 100dvh;
+    background-color: var(--bg-contrast-dark);
+    flex-direction: column;
     justify-content: center;
-    font-size: 0.9rem;
+    align-items: center;
+    gap: 2.5rem;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 2rem;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.6);
+    z-index: 1001;
+    margin-right: 0;
+    font-size: 1rem;
   }
-  /* Push hero content down so nav doesn't overlap PORTFOLIO text */
+
+  .nav-links.nav-open {
+    right: 0;
+  }
+
+  .nav-link {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  /* Push hero content down — less padding needed with hamburger */
   .hero-dark {
-    padding-top: 17rem; 
+    padding-top: 12rem;
     display: flex;
     flex-direction: column;
     align-items: center;

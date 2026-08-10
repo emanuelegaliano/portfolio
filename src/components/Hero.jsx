@@ -1,5 +1,5 @@
 import React from 'react'
-import firstCardImg from '../assets/first_card.png'
+import firstCardImg from '../assets/first_card.webp'
 
 const GithubIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -43,7 +43,7 @@ const Hero = () => {
 
       <div className="hero-content-wrapper">
         <div className="hero-visual-layer">
-          <img src={firstCardImg} alt="Hero representation" className="abstract-photo-placeholder" />
+          <img src={firstCardImg} alt="Hero representation" className="abstract-photo-placeholder" decoding="async" fetchPriority="high" />
         </div>
         
         <div className="hero-socials">

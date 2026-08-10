@@ -13,8 +13,6 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <div className="black-band">
-        </div>
         <About />
         <ResumeSplit />
         <Work />

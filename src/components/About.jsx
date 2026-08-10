@@ -1,5 +1,5 @@
 import React from 'react'
-import secondCardImg from '../assets/second_card.png'
+import secondCardImg from '../assets/second_card.webp'
 
 const About = () => {
   return (
@@ -26,7 +26,7 @@ const About = () => {
 
         <div className="about-visual">
           <div className="visual-circle"></div>
-          <img src={secondCardImg} alt="Card visual" className="visual-rect" />
+          <img src={secondCardImg} alt="Card visual" className="visual-rect" loading="lazy" decoding="async" />
           
           <div className="floating-badge badge-1">Upcoming MSc</div>
           <div className="floating-badge badge-2">Italian</div>
