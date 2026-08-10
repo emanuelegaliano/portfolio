@@ -22,29 +22,32 @@ const ChevronRight = () => (
 const projects = [
   {
     id: 1,
-    title: 'Explainable AI (XAI) Dashboard',
-    tags: 'MLOps | Interpretability | Dashboard',
+    title: 'Graph-EBM',
+    tags: 'Causal Discovery | Gumbel-Sinkhorn',
     theme: 'dark',
-    chart: 'bar'
+    chart: 'bar',
+    link: 'https://github.com/emanuelegaliano/Graph-EBM'
   },
   {
     id: 2,
-    title: 'Time Series Forecasting for Inventory',
-    tags: 'TIME SERIES | FORECASTING | LOGISTICS',
+    title: 'pyroclast',
+    tags: 'OpenCL | MC Simulation',
     theme: 'light',
-    chart: 'line'
+    chart: 'line',
+    link: 'https://github.com/emanuelegaliano/pyroclast'
   },
   {
     id: 3,
-    title: 'NLP Customer Feedback Analysis',
-    tags: 'NLP | Sentiment Analysis | Visualizations',
+    title: 'Sylloge-by-Manu',
+    tags: 'Academic Study Notes | LaTeX Course Summaries',
     theme: 'light',
-    chart: 'donut'
+    chart: 'donut',
+    link: 'https://github.com/emanuelegaliano/Sylloge-by-Manu'
   }
 ];
 
 const Work = () => {
-  const [currentIndex, setCurrentIndex] = useState(1); // Start with middle active
+  const [currentIndex, setCurrentIndex] = useState(0); // Start with first active
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev > 0 ? prev - 1 : projects.length - 1));
@@ -57,32 +60,65 @@ const Work = () => {
   const renderChartPlaceholder = (type) => {
     if (type === 'bar') {
       return (
-        <div className="chart-placeholder bar-chart">
-          <div className="bar" style={{height: '60%', background: '#4F46E5'}}></div>
-          <div className="bar" style={{height: '40%', background: '#06B6D4'}}></div>
-          <div className="bar" style={{height: '80%', background: '#10B981'}}></div>
-          <div className="bar" style={{height: '50%', background: '#F59E0B'}}></div>
-          <div className="bar" style={{height: '70%', background: '#EF4444'}}></div>
+        <div className="chart-placeholder" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.03)', borderRadius: '16px' }}>
+          <svg viewBox="0 0 100 100" width="80%" height="80%">
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+              </marker>
+            </defs>
+            <circle cx="20" cy="50" r="6" fill="#4F46E5" />
+            <circle cx="50" cy="20" r="6" fill="#06B6D4" />
+            <circle cx="50" cy="80" r="6" fill="#10B981" />
+            <circle cx="80" cy="50" r="6" fill="#F59E0B" />
+            
+            <line x1="26" y1="44" x2="44" y2="26" stroke="#4F46E5" strokeWidth="2" markerEnd="url(#arrow)" />
+            <line x1="26" y1="56" x2="44" y2="74" stroke="#10B981" strokeWidth="2" markerEnd="url(#arrow)" />
+            <line x1="56" y1="26" x2="74" y2="44" stroke="#06B6D4" strokeWidth="2" markerEnd="url(#arrow)" />
+            <line x1="56" y1="74" x2="74" y2="56" stroke="#F59E0B" strokeWidth="2" markerEnd="url(#arrow)" />
+          </svg>
         </div>
       )
     }
     if (type === 'line') {
       return (
-        <div className="chart-placeholder line-chart">
-          <svg viewBox="0 0 100 50" preserveAspectRatio="none" className="line-svg">
-            <path d="M0,40 Q10,20 20,30 T40,10 T60,25 T80,5 T100,15" fill="none" stroke="#F59E0B" strokeWidth="2" />
-            <path d="M0,40 Q10,20 20,30 T40,10 T60,25 T80,5 T100,15 L100,50 L0,50 Z" fill="rgba(59, 130, 246, 0.2)" stroke="none" />
-            <path d="M0,35 Q10,25 20,25 T40,20 T60,15 T80,10 T100,10" fill="none" stroke="#3B82F6" strokeWidth="1" />
+        <div className="chart-placeholder" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.02)', borderRadius: '16px' }}>
+          <svg viewBox="0 0 100 100" width="80%" height="80%">
+            {/* Grid */}
+            <path d="M 20 20 L 80 20 M 20 40 L 80 40 M 20 60 L 80 60 M 20 80 L 80 80" stroke="#e2e8f0" strokeWidth="1" />
+            <path d="M 20 20 L 20 80 M 40 20 L 40 80 M 60 20 L 60 80 M 80 20 L 80 80" stroke="#e2e8f0" strokeWidth="1" />
+            
+            {/* Particles/Heat */}
+            <circle cx="50" cy="50" r="8" fill="#EF4444" opacity="0.8" />
+            <circle cx="40" cy="40" r="5" fill="#F59E0B" />
+            <circle cx="60" cy="60" r="5" fill="#F59E0B" />
+            <circle cx="30" cy="30" r="3" fill="#10B981" />
+            <circle cx="70" cy="70" r="3" fill="#10B981" />
+            
+            {/* Flow paths */}
+            <path d="M 50 50 Q 60 40 70 30" fill="none" stroke="#EF4444" strokeWidth="2" strokeDasharray="4 4" />
+            <path d="M 50 50 Q 40 60 30 70" fill="none" stroke="#F59E0B" strokeWidth="2" strokeDasharray="4 4" />
           </svg>
         </div>
       )
     }
     if (type === 'donut') {
       return (
-        <div className="chart-placeholder donut-chart">
-          <div className="donut">
-            <div className="donut-hole"></div>
-          </div>
+        <div className="chart-placeholder" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.02)', borderRadius: '16px' }}>
+          <svg viewBox="0 0 100 100" width="80%" height="80%">
+            {/* Document / Notes */}
+            <rect x="25" y="15" width="50" height="70" rx="4" fill="none" stroke="#3B82F6" strokeWidth="4" />
+            
+            {/* Lines of text */}
+            <line x1="35" y1="35" x2="65" y2="35" stroke="#10B981" strokeWidth="3" strokeLinecap="round" />
+            <line x1="35" y1="45" x2="55" y2="45" stroke="#F59E0B" strokeWidth="3" strokeLinecap="round" />
+            <line x1="35" y1="55" x2="65" y2="55" stroke="#EF4444" strokeWidth="3" strokeLinecap="round" />
+            <line x1="35" y1="65" x2="50" y2="65" stroke="#6366F1" strokeWidth="3" strokeLinecap="round" />
+            
+            {/* LaTeX math symbol hint */}
+            <path d="M 75 15 L 85 15 L 85 25" fill="none" stroke="#06B6D4" strokeWidth="3" />
+            <path d="M 85 15 L 70 30" fill="none" stroke="#06B6D4" strokeWidth="3" />
+          </svg>
         </div>
       )
     }
@@ -132,7 +168,7 @@ const Work = () => {
                     
                     {renderChartPlaceholder(project.chart)}
                     
-                    <a href="#" className="card-github" aria-label="View on GitHub">
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="card-github" aria-label="View on GitHub">
                       <GithubIcon />
                       <span>VIEW ON GITHUB</span>
                     </a>

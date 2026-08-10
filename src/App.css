@@ -336,7 +336,7 @@
 
 .timeline-row {
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: 150px 1fr;
   gap: 2rem;
   align-items: baseline;
   position: relative;
@@ -401,7 +401,7 @@
   width: calc(100% + 50px);
   max-width: 450px;
   z-index: 10;
-  border-radius: 8px;
+  border-radius: 24px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
@@ -487,7 +487,7 @@
   --accent-secondary: #005377; /* Yale Blue */
   position: relative;
   background-color: var(--bg-main);
-  padding: 6rem 0 10rem;
+  padding: 6rem 0 6rem;
   overflow: hidden;
 }
 
@@ -533,7 +533,7 @@
   position: absolute;
   width: 380px;
   height: 520px;
-  border-radius: 12px;
+  border-radius: 24px;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
   padding: 2.5rem;
@@ -690,10 +690,11 @@
 
 /* FOOTER */
 .footer {
-  padding: 4rem 0;
+  padding: 1.5rem 0;
   text-align: center;
   background-color: var(--bg-contrast-dark);
   color: var(--text-light-muted);
+  font-size: 0.85rem;
 }
 
 /* RESPONSIVE */
@@ -792,7 +793,7 @@
 
 /* PERSONALITY & HOBBIES SECTION */
 .personality-section {
-  padding: 8rem 0;
+  padding: 4rem 0 8rem 0;
   background-color: var(--bg-main); /* Match Work section background */
   color: var(--text-dark);
   position: relative;

@@ -12,12 +12,10 @@ const About = () => {
             I'm Emanuele !
           </h2>
           <p className="about-bio">
-            I am a Computer Science graduate specializing in Data Science and Machine Learning. 
-            I approach complex problems in a rational way, currently preparing for an MSc in Artificial Intelligence 
-            with a strong focus on the application of Causal Analysis.
+            I am a Computer Science graduate specializing in Data Science and Machine Learning. Driven by academic curiosity, I have a strong interest in Causal AI, exploring how Causal Inference can move machine learning beyond statistical correlation toward genuine reasoning and explainability.
           </p>
           
-          <a href="#" className="btn-pill-large">
+          <a href="https://www.linkedin.com/in/emanuele-galiano-5806083b0/" target="_blank" rel="noopener noreferrer" className="btn-pill-large">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>

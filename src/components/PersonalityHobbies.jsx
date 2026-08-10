@@ -23,7 +23,7 @@ const PersonalityHobbies = () => {
 
             <div className="personality-traits">
               <div className="trait-item">
-                <span className="trait-label">Extraverted</span>
+                <span className="trait-label">Extroverted</span>
                 <div className="trait-bar"><div className="trait-fill ext" style={{width: '71%'}}></div></div>
                 <span className="trait-pct">71%</span>
               </div>
@@ -62,6 +62,13 @@ const PersonalityHobbies = () => {
             </p>
             <div className="hobbies-list">
               <div className="hobby-item">
+                <span className="hobby-icon">🎸</span>
+                <div className="hobby-info">
+                  <h4>Slapping tha bass</h4>
+                  <p>Grooving and keeping the rhythm</p>
+                </div>
+              </div>
+              <div className="hobby-item">
                 <span className="hobby-icon">♟️</span>
                 <div className="hobby-info">
                   <h4>Strategy Games</h4>
@@ -69,17 +76,10 @@ const PersonalityHobbies = () => {
                 </div>
               </div>
               <div className="hobby-item">
-                <span className="hobby-icon">📚</span>
+                <span className="hobby-icon">🧠</span>
                 <div className="hobby-info">
-                  <h4>Reading</h4>
-                  <p>Technology, Science Fiction, and Philosophy</p>
-                </div>
-              </div>
-              <div className="hobby-item">
-                <span className="hobby-icon">🏃‍♂️</span>
-                <div className="hobby-info">
-                  <h4>Running & Fitness</h4>
-                  <p>Keeping the body as active as the mind</p>
+                  <h4>Studying new things</h4>
+                  <p>Always curious and learning</p>
                 </div>
               </div>
             </div>
