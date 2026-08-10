@@ -59,7 +59,7 @@ const ResumeSplit = () => {
           </div>
         </div>
 
-        <div className="languages-block" style={{ marginTop: '3rem' }}>
+        <div className="languages-block">
           <h2 className="column-heading">Languages</h2>
           <div className="timeline-list">
             <div className="timeline-row">
@@ -83,7 +83,7 @@ const ResumeSplit = () => {
       <div className="split-right">
         
         <div className="contact-box" id="contact">
-          <h2>Contact</h2>
+          <h2>Contacts</h2>
           <div className="contact-item">
             <span>📍</span> Catania, Italy
           </div>
@@ -95,7 +95,7 @@ const ResumeSplit = () => {
           </div>
         </div>
 
-        <h1 className="huge-bg-text">RESUME<br/>RESUME<br/>RESUME</h1>
+        <h1 className="huge-bg-text">RESUME<br/>RESUME<br/><span className="resume-last">RESUME</span></h1>
 
         <div className="interests-grid">
           <div className="interest-column">

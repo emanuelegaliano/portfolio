@@ -357,7 +357,7 @@
   --accent-secondary: #C62828; /* Cardinal Red */
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 100vh;
+  scroll-margin-top: 75px;
 }
 
 .split-left {
@@ -365,7 +365,7 @@
   padding: 4rem 10% 4rem 4rem;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2.5rem;
 }
 
 .split-right {
@@ -437,9 +437,9 @@
 .experience-block {
   background-color: transparent;
   border-left: none;
-  padding: 2.5rem 0;
+  padding: 0;
   color: var(--text-dark);
-  margin-top: 2rem;
+  margin-top: 0;
 }
 
 .experience-block .column-heading {
@@ -462,7 +462,7 @@
   color: var(--text-light);
   padding: 3rem;
   position: absolute;
-  top: -100px;
+  top: -40px;
   left: -50px;
   width: calc(100% + 50px);
   max-width: 450px;
@@ -494,6 +494,10 @@
   margin-top: 7rem; /* Reduced space so it slides under contact box */
   text-transform: uppercase;
   margin-bottom: 3rem;
+}
+
+.huge-bg-text .resume-last {
+  -webkit-text-stroke: 2px rgba(255,255,255,0.6);
 }
 
 /* INTERESTS (Much larger now) */
