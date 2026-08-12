@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+
 const GithubIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
@@ -22,27 +23,27 @@ const ChevronRight = () => (
 const projects = [
   {
     id: 1,
-    title: 'Graph-EBM',
-    tags: 'Causal Discovery | Gumbel-Sinkhorn',
+    title: 'MRI Image Classification for Alzheimer\'s Diagnosis',
+    tags: 'Machine Learning | MRI Classification',
     theme: 'dark',
-    chart: 'bar',
-    link: 'https://github.com/emanuelegaliano/Graph-EBM'
+    chart: 'brain',
+    link: 'https://github.com/Diego54523/unict-ml-year-2025-group-5-ReLU-tanti'
   },
   {
     id: 2,
+    title: 'Sylloge-by-manu',
+    tags: 'Academic Study Notes | LaTeX Course Summaries',
+    theme: 'light',
+    chart: 'donut',
+    link: 'https://github.com/emanuelegaliano/Sylloge-by-Manu'
+  },
+  {
+    id: 3,
     title: 'pyroclast',
     tags: 'OpenCL | MC Simulation',
     theme: 'light',
     chart: 'line',
     link: 'https://github.com/emanuelegaliano/pyroclast'
-  },
-  {
-    id: 3,
-    title: 'Sylloge-by-Manu',
-    tags: 'Academic Study Notes | LaTeX Course Summaries',
-    theme: 'light',
-    chart: 'donut',
-    link: 'https://github.com/emanuelegaliano/Sylloge-by-Manu'
   }
 ];
 
@@ -58,24 +59,31 @@ const Work = () => {
   };
 
   const renderChartPlaceholder = (type) => {
-    if (type === 'bar') {
+    if (type === 'brain') {
       return (
         <div className="chart-placeholder" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.03)', borderRadius: '16px' }}>
           <svg viewBox="0 0 100 100" width="80%" height="80%">
-            <defs>
-              <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
-              </marker>
-            </defs>
-            <circle cx="20" cy="50" r="6" fill="#4F46E5" />
-            <circle cx="50" cy="20" r="6" fill="#06B6D4" />
-            <circle cx="50" cy="80" r="6" fill="#10B981" />
-            <circle cx="80" cy="50" r="6" fill="#F59E0B" />
+            {/* MRI scan frame */}
+            <rect x="15" y="15" width="70" height="70" rx="6" fill="none" stroke="#64748b" strokeWidth="2" opacity="0.4" />
             
-            <line x1="26" y1="44" x2="44" y2="26" stroke="#4F46E5" strokeWidth="2" markerEnd="url(#arrow)" />
-            <line x1="26" y1="56" x2="44" y2="74" stroke="#10B981" strokeWidth="2" markerEnd="url(#arrow)" />
-            <line x1="56" y1="26" x2="74" y2="44" stroke="#06B6D4" strokeWidth="2" markerEnd="url(#arrow)" />
-            <line x1="56" y1="74" x2="74" y2="56" stroke="#F59E0B" strokeWidth="2" markerEnd="url(#arrow)" />
+            {/* Simplified brain cross-section */}
+            <ellipse cx="50" cy="48" rx="22" ry="24" fill="none" stroke="#6366F1" strokeWidth="2.5" />
+            <path d="M 50 24 C 50 48 38 42 38 48 C 38 54 50 72 50 72" fill="none" stroke="#6366F1" strokeWidth="1.5" opacity="0.6" />
+            <path d="M 50 24 C 50 48 62 42 62 48 C 62 54 50 72 50 72" fill="none" stroke="#6366F1" strokeWidth="1.5" opacity="0.6" />
+            
+            {/* Heatmap highlight region */}
+            <circle cx="40" cy="42" r="8" fill="#F59E0B" opacity="0.25" />
+            <circle cx="40" cy="42" r="4" fill="#EF4444" opacity="0.35" />
+            
+            {/* Classification arrow + label */}
+            <line x1="72" y1="50" x2="85" y2="50" stroke="#10B981" strokeWidth="2" strokeLinecap="round" />
+            <polygon points="88,50 83,47 83,53" fill="#10B981" />
+            
+            {/* Corner scan markers */}
+            <path d="M 15 25 L 15 15 L 25 15" fill="none" stroke="#06B6D4" strokeWidth="2" />
+            <path d="M 75 15 L 85 15 L 85 25" fill="none" stroke="#06B6D4" strokeWidth="2" />
+            <path d="M 85 75 L 85 85 L 75 85" fill="none" stroke="#06B6D4" strokeWidth="2" />
+            <path d="M 25 85 L 15 85 L 15 75" fill="none" stroke="#06B6D4" strokeWidth="2" />
           </svg>
         </div>
       )

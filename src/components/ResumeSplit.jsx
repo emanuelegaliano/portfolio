@@ -45,7 +45,7 @@ const ResumeSplit = () => {
               <div className="timeline-year">2026 ─ Curr.</div>
               <div className="timeline-content">
                 <h4>Research Group Member</h4>
-                <p><a href="https://coai-iplab.github.io/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>COAI IP-LAB</a> — Causal Object-centric AI</p>
+                <p><a href="https://coai-iplab.github.io/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Co-AI IPLAB</a> — Causal Object-centric AI</p>
               </div>
             </div>
 
