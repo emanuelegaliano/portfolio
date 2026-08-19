@@ -56,7 +56,9 @@ const PersonalityHobbies = () => {
 
           {/* Hobbies Card */}
           <div className="ph-card hobbies-card">
-            <h3>Hobbies & Interests</h3>
+            <div className="ph-card-header">
+              <h3>Hobbies & Interests</h3>
+            </div>
             <p className="personality-desc" style={{marginBottom: '2rem'}}>
               When I'm not writing code or analyzing data, you can find me exploring other passions.
             </p>
